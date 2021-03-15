@@ -217,7 +217,7 @@ API.v1.addRoute('rooms.info', { authRequired: true }, {
 		if (!Meteor.call('canAccessRoom', room._id, this.userId, {})) {
 			return API.v1.failure('not-allowed', 'Not Allowed');
 		}
-		return API.v1.success({ room: Rooms.findOneByIdOrName(room._id, { fields }) });
+		return API.v1.success({ room });
 	},
 });
 
